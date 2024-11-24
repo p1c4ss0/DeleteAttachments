@@ -1,6 +1,6 @@
 Office.onReady((info) => {
     if (info.host === Office.HostType.Outlook) {
-        document.getElementById("deleteAttachmentsButton").onclick = deleteAttachments;
+        document.getElementById("removeButton").onclick = deleteAttachments;
     }
 });
 
