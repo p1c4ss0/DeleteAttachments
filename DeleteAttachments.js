@@ -1,10 +1,10 @@
 Office.onReady(function (info) {
     if (info.host === Office.HostType.Outlook) {
-        document.getElementById("removeButton").onclick = DeleteAttachments;
+        document.getElementById("removeButton").onclick = deleteAttachments;
     }
 });
 
-function DeleteAttachments() {
+function deleteAttachments() {
     var item = Office.context.mailbox.item;
     if (item.attachments && item.attachments.length > 0) {
         item.attachments.forEach(function (attachment) {
