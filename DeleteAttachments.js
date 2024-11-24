@@ -5,7 +5,7 @@ Office.onReady(function (info) {
 });
 
 function deleteAttachments() {
-    var item = Office.context.mailbox.item;
+    var item = Office.context.mailbox.item.attachments[0].id;
     if (item.attachments && item.attachments.length > 0) {
         item.attachments.forEach(function (attachment) {
             item.removeAttachmentAsync(attachment.id, function (result) {
