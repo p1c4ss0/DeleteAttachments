@@ -6,7 +6,10 @@ Office.onReady(function (info) {
 
 function deleteAttachments() {
     var item = Office.context.mailbox.item;
-    if (item.attachments && item.attachments.length > 0) {
+    var totalAttachments = item.attachments.length;
+    
+    if (totalAttachments > 0) {
+        console.log('Total attachments:', totalAttachments);
         item.attachments.forEach(function (attachment) {
             item.removeAttachmentAsync(attachment.id, function (result) {
                 if (result.status === Office.AsyncResultStatus.Failed) {
