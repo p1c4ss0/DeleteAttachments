@@ -14,7 +14,5 @@ async function deleteAttachments() {
         });
       });
     });
-  }
-})
 
 office.actions.associate("deleteAttachments" , deleteAttachments) ;
