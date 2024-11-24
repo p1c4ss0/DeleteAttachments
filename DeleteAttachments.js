@@ -1,7 +1,8 @@
-Office.onReady(function() {
-  // ... (button click event handler)
+Office.onReady(function(() => {
 
-  function deleteAttachments() {
+}):
+  // ... (button click event handler)
+async function deleteAttachments() {
     Office.context.mailbox.item.load('attachments');
     Office.context.mailbox.item.retrieveAsync().then(function() {
       var attachments = Office.context.mailbox.item.attachments;
@@ -14,4 +15,6 @@ Office.onReady(function() {
       });
     });
   }
-});
+})
+
+office.actions.associate("deleteAttachments" , deleteAttachments) ;
